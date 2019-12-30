@@ -8,30 +8,39 @@ import Typography from '@material-ui/core/Typography';
 function Cards(props) {
   const [number, setNumber] = useState(0);
   const { nama, harga, jenis, image } = props;
+  const { classes } = props;
 
   return (
     <div>
-      <Card style={{ width: 200, height: 300 }}>
-        <CardMedia style={{ height: 120 }} image={image} />
-        <Typography gutterBottom variant="body" component="h1">
+      <Card style={{ width: 380, height: 180, paddingTop: 10 }}>
+        <CardMedia style={{ width: 180, height: 180 }} image={image} />
+        <Typography
+          className={classes.nama}
+          gutterBottom
+          variant="body"
+          component="h2">
           {nama}
         </Typography>
-        <Typography variant="body2" component="h3">
+        <Typography className={classes.harga} variant="body1" component="h3">
           {harga}
         </Typography>
-        <Typography gutterBottom variant="h5" component="h5">
+        <Typography
+          className={classes.jenis}
+          gutterBottom
+          variant="body1"
+          component="h1">
           {jenis}
         </Typography>
-        <CardActions>
+        <CardActions className={classes.button}>
           <Button
             onClick={() => setNumber(number + 1)}
-            style={{ backgroundColor: 'red' }}>
+            style={{ backgroundColor: 'orange' }}>
             +
           </Button>
           <h1>{number}</h1>
           <Button
             onClick={() => setNumber(number - 1)}
-            style={{ backgroundColor: 'blue' }}>
+            style={{ backgroundColor: 'gray' }}>
             -
           </Button>
         </CardActions>

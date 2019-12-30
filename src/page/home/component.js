@@ -1,11 +1,18 @@
 import React from 'react';
-import Data from '../../component/data-diri';
+import AppBar from '../../component/app-bar';
+import Cardd from '../../component/cards-jenis';
+import CardJenis from '../../component/card-jenis-fast-food';
+import Navigation from '../../component/bottom-navigation';
+import Container from '@material-ui/core/Container';
 
 function Home() {
   return (
-    <React.Fragment>
-      <Data nama="Rere" umur="17" tanggal="23" />
-    </React.Fragment>
+    <Container maxWidth="xs">
+      <AppBar style={{ marginLeft: 80 }} title="W.O.Y RESTAURANT" />
+      <Cardd />
+      <CardJenis />
+      <Navigation />
+    </Container>
   );
 }
 
